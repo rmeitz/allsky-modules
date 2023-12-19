@@ -218,7 +218,7 @@ def weatherflowtempest(params, event):
                                 return
 
                         else:
-                            result = "Got error from Open Weather Map API. Response code {}".format(response.status_code)
+                            result = "Got error from WeatherFlow API. Response code {}".format(response.status_code)
                             s.log(0,"ERROR: {}".format(result))
                     except Exception as e:
                         result = str(e)
@@ -240,12 +240,12 @@ def weatherflowtempest(params, event):
 
     return result
 
-def openweathermap_cleanup():
+def weatherflowtempest_cleanup():
     moduleData = {
         "metaData": metaData,
         "cleanup": {
             "files": {
-                "openweather.json"
+                "weatherflowtempest.json"
             },
             "env": {}
         }
